@@ -1,0 +1,4 @@
+@EndUserText.label: 'Service definition for ZC_RAP_BILL_006'
+define service ZUI_RAP_BILL_006_O4 {
+  expose ZC_RAP_BILL_006 as Fatura;
+}

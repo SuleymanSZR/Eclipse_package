@@ -1,0 +1,6 @@
+@EndUserText.label: 'Faturalandırma Service Definition Deneme'
+define service Zui_rap_bill_test_001 {
+  expose zr_rap_bill_test_001 as Fatura;
+  expose zr_rap_bill_004      as Matnr;
+  expose zr_rap_bill_test_002 as Sirket;
+}

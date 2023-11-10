@@ -1,0 +1,42 @@
+managed implementation in class zbp_r_rap_fat_006 unique;
+strict ( 2 );
+
+define behavior for ZR_RAP_FAT_006 alias Siparis
+persistent table zrap_vbap
+lock master
+authorization master ( instance )
+//etag master <field_name>
+{
+  create;
+  update (features : instance );
+  delete (features : instance );
+  association _Fatura { create; }
+  association _Teslimat { create; }
+
+  action (features : instance) baslikDetay result [1] $self;
+}
+
+define behavior for ZR_RAP_FAT_007 alias Fatura
+persistent table zrap_vbrp
+lock dependent by _Siparis
+authorization dependent by _Siparis
+//etag master <field_name>
+{
+  update;
+  delete;
+  field ( readonly ) Vgbel, Vgpos;
+  association _Siparis;
+}
+
+define behavior for ZR_RAP_FAT_008 alias Teslimat
+persistent table zrap_lips
+lock dependent by _Siparis
+authorization dependent by _Siparis
+//etag master <field_name>
+{
+  update;
+  delete;
+  field ( readonly ) Vgbel, Vgpos;
+  field ( readonly ) Arktx;
+  association _Siparis;
+}

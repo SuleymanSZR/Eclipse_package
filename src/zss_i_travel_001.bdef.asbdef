@@ -1,0 +1,54 @@
+managed implementation in class zbp_ss_i_travel_001 unique;
+with draft;
+
+define behavior for zss_i_travel_001 alias Travel
+persistent table zss_travel_001
+lock master total etag AgencyID
+draft table zss_travel_001_d
+authorization master ( instance )
+etag master AgencyID
+{
+  create;
+  update (features : instance );
+  delete (features : instance );
+  association _Booking { create; }
+
+  // instance action and dynamic action control
+  action ( features : instance ) setActiveTravel result [1] $self;
+
+  mapping for zss_travel_001
+    {
+      TravelID           = travel_id;
+      AgencyID           = agency_id;
+      CustomerID         = customer_id;
+      BeginDate          = begin_date;
+      EndDate            = end_date;
+      BookingFee         = booking_fee;
+      TotalPrice         = total_price;
+      CurrencyCode       = currency_code;
+      Description        = description;
+      CreatedBy          = created_by;
+      CreatedAt          = created_at;
+      LocalLastChangedAt = local_last_changed_at;
+      LastChangedAt      = last_changed_at;
+      TravelStatus       = overall_status;
+      LastChangedBy      = last_changed_by;
+    }
+}
+
+
+define behavior for zss_i_book_001 alias Booking
+persistent table zss_book_001
+lock dependent by _Travel
+draft table zss_book_001_d
+authorization dependent by _Travel
+{
+  update;
+  delete;
+  field ( readonly ) TravelUUID;
+  association _Travel;
+
+
+  action ( features : instance ) setActiveBook result [1] $self;
+
+}

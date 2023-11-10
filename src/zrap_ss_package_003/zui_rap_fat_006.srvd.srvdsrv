@@ -1,0 +1,6 @@
+@EndUserText.label: 'Sipariş Detay Def'
+define service Zui_rap_fat_006 {
+  expose ZC_RAP_FAT_006 as Siparis;
+  expose ZC_RAP_FAT_007 as Fatura;
+  expose ZC_RAP_FAT_008 as Teslimat;
+}

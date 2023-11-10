@@ -1,0 +1,25 @@
+@Metadata.layer: #CORE
+
+@UI: {
+  headerInfo: { typeName: 'Sirket',
+                typeNamePlural: 'Sirket',
+                title: { type: #STANDARD, value: 'sirketKodu' } } }
+                
+annotate view ZC_RAP_BILL_SS_002
+    with 
+{
+  @UI.facet: [{ id:        'Sirket',
+                purpose:   #STANDARD,
+                type:      #IDENTIFICATION_REFERENCE,
+                label:     'Sirket Detay',
+                position:  10 }]
+                
+  @UI:{ lineItem:       [{ position: 10, label: 'Şirket Kodu' }],
+        identification: [{ position: 10, label: 'Şirket Kodu' }] }
+  SirketKodu;
+
+  @UI: {  lineItem:       [ { position: 20 , label:'Şirket Adı'} ],
+          identification: [ { position: 20 } ] }
+  SirketAdi;
+
+}

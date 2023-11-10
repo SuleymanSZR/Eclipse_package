@@ -1,0 +1,84 @@
+@Metadata.layer: #CORE
+@UI: {
+  headerInfo: {
+    typeName: 'Fatura', 
+    typeNamePlural: 'Fatura'
+  }
+}
+annotate view ZC_RAP_BILL_006 with
+{
+  @UI.facet: [ {
+    id: 'idIdentification', 
+    type: #IDENTIFICATION_REFERENCE, 
+    label: 'Fatura', 
+    position: 10 
+  } ]
+  @UI.lineItem: [ {
+    position: 10 , 
+    importance: #MEDIUM, 
+    label: 'Belge No'
+  } ]
+  @UI.identification: [ {
+    position: 10 , 
+    label: 'Belge No'
+  } ]
+  Belnr;
+  
+  @UI.lineItem: [ {
+    position: 20 , 
+    importance: #MEDIUM, 
+    label: 'Malzeme'
+  } ]
+  @UI.identification: [ {
+    position: 20 , 
+    label: 'Malzeme'
+  } ]
+  Matnr;
+  
+  @UI.lineItem: [ {
+    position: 30 , 
+    importance: #MEDIUM, 
+    label: 'Para Birimi'
+  } ]
+  @UI.identification: [ {
+    position: 30 , 
+    label: 'Para Birimi'
+  } ]
+  ParaBirimi;
+  
+  @UI.lineItem: [ {
+    position: 40 , 
+    importance: #MEDIUM, 
+    label: 'Toplam Tutar'
+  } ]
+  @UI.identification: [ {
+    position: 40 , 
+    label: 'Toplam Tutar'
+  } ]
+  ToplamTutar;
+  
+  @UI.lineItem: [ {
+    position: 50 , 
+    importance: #MEDIUM, 
+    label: 'Oluşturma Tarihi'
+  } ]
+  @UI.identification: [ {
+    position: 50 , 
+    label: 'Oluşturma Tarihi'
+  } ]
+  OlusturmaTarih;
+  
+  @UI.lineItem: [ {
+    position: 60 , 
+    importance: #MEDIUM, 
+    label: 'SirketKodu'
+  } ]
+  @UI.identification: [ {
+    position: 60 , 
+    label: 'SirketKodu'
+  } ]
+  SirketKodu;
+  
+  @UI.hidden: true
+  LocalLastChangedAt;
+}

@@ -1,0 +1,9 @@
+projection;
+strict;
+
+define behavior for zc_rap_ss_004 alias Building
+{
+  use create;
+  use update;
+  use delete;
+}

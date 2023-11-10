@@ -1,0 +1,47 @@
+@Metadata.layer: #CORE
+@UI: {
+       headerInfo: { typeName: 'Fatura',
+                     typeNamePlural: 'Fatura',
+                     title: { type:#STANDARD , label: 'Fatura' } } }
+
+annotate view zc_rap_fat_004 with
+{
+
+  @UI.facet: [ { id:             'Fatura',
+                purpose:         #STANDARD,
+                type:            #IDENTIFICATION_REFERENCE,
+                label:           'Fatura',
+                position:        10 },
+                { id:             'Teslimat',
+                purpose:         #STANDARD,
+                type:            #LINEITEM_REFERENCE,
+                label:           'Teslimat',
+                position:        20,
+                targetElement: '_Siparis._Teslimat' } ]
+                
+  @UI:{ lineItem:     [{ position: 10, label: 'Fatura Belgesi' }],
+      identification: [{ position: 10, label: 'Fatura Belgesi' }] }
+  Vbeln;
+
+  @UI:{ lineItem:     [{ position: 20, label: 'Kalem' }],
+      identification: [{ position: 20, label: 'Kalem' }] }
+  Posnr;
+
+  @UI:{ lineItem:     [{ position: 30, label: 'Faturalanan mkt' }],
+      identification: [{ position: 30, label: 'Faturalanan mkt' }] }
+  Fkimg;
+
+  @UI:{ lineItem:     [{ position: 40, label: 'Satış ölçü brm.' }],
+      identification: [{ position: 40, label: 'Satış ölçü brm.' }] }
+  Vrkme;
+
+  @UI:{ lineItem:     [{ position: 50, label: 'Referans belge' }],
+      identification: [{ position: 50, label: 'Referans belge' }] }
+  Vgbel;
+
+  @UI:{ lineItem:     [{ position: 60, label: 'Referans kalem' }],
+      identification: [{ position: 60, label: 'Referans kalem' }] }
+  Vgpos;
+  /* Associations */
+//  _Siparis;
+}

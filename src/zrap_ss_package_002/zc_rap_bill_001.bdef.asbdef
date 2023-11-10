@@ -1,0 +1,19 @@
+projection;
+strict ( 2 );
+
+define behavior for zc_rap_bill_001 alias Fatura
+{
+  use create;
+  use update;
+  use delete;
+
+  use association _sirket { create; }
+}
+
+define behavior for zc_rap_bill_002 alias Sirket
+{
+  use update;
+  use delete;
+
+  use association _Fatura;
+}

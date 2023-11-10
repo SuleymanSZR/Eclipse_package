@@ -1,0 +1,4 @@
+@EndUserText.label: 'Building'
+define service Zui_rap_ss_004_04 {
+  expose zc_rap_ss_004 as Building;
+}

@@ -1,0 +1,35 @@
+managed;
+// with draft;
+
+define behavior for zrap_ss_i_uxteam_001 alias UXTeam
+implementation in class zbp_rap_ss_i_uxteam_001 unique
+persistent table zrap_ss_001
+lock master // total etag LastChangedAt
+etag master LocalLastChangedAt
+{
+  create;
+  update;
+  delete;
+
+  field ( numbering : managed, readonly ) Id;
+  field ( readonly ) Active, Salary;
+  field ( readonly ) LastChangedAt, LocalLastChangedAt;
+  action deneme;
+
+  action ( features : instance ) setActive result [1] $self;
+  determination changeSalary on save { field Role; }
+  validation validateAge on save { field Age; create; }
+
+  mapping for zrap_ss_001
+    {
+      Id                 = id;
+      FirstName          = firstName;
+      LastName           = lastName;
+      Age                = age;
+      Role               = role;
+      Salary             = salary;
+      Active             = active;
+      LastChangedAt      = last_changed_at;
+      LocalLastChangedAt = local_last_changed_at;
+    }
+}

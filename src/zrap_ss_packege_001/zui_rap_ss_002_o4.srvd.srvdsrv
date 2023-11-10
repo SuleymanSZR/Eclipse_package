@@ -1,0 +1,5 @@
+@EndUserText.label: 'Service definition for ZC_RAP_SS_002'
+define service ZUI_RAP_SS_002_O4 {
+  expose ZC_RAP_SS_002 as Travel;
+  expose I_Currency    as Currency;
+}

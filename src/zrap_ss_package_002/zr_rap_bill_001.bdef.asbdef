@@ -1,0 +1,48 @@
+managed implementation in class zbp_r_rap_bill_001 unique;
+strict ( 2 );
+
+define behavior for zr_rap_bill_001 alias Fatura
+persistent table zrap_bill_001
+lock master
+authorization master ( instance )
+etag master Sirketkodu
+{
+  create;
+  update (features : instance );
+  delete (features : instance );
+
+  field ( readonly ) Sirketkodu;
+
+  association _sirket { create; }
+
+  mapping for zrap_bill_001
+    {
+      Sirketkodu     = sirketkodu;
+      Belnr          = belnr;
+      Matnr          = matnr;
+      Parabirimi     = parabirimi;
+      Toplamtutar    = toplamtutar;
+      Olusturmatarih = olusturmatarih;
+    }
+
+}
+
+define behavior for zr_rap_bill_002 alias Sirket
+persistent table zrap_bill_002
+lock dependent by _Fatura
+authorization dependent by _Fatura
+//etag master <field_name>
+{
+  update;
+  delete;
+  field ( readonly ) sirketKodu;
+  field ( readonly ) matnr;
+  association _Fatura;
+
+  mapping for zr_rap_bill_002
+    {
+
+      //      Sirketkodu = sirketkodu;
+      sirketadi = sirketadi;
+    }
+}

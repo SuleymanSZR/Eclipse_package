@@ -1,0 +1,4 @@
+@EndUserText.label: 'Expose , Servise Definition for UXTeam'
+define service Zrap_ss_uxteam_001 {
+  expose zrap_ss_c_uxteam_001 as UXTeam;
+}

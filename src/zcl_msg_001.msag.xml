@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_MSAG" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <T100A>
+    <ARBGB>ZCL_MSG_001</ARBGB>
+    <MASTERLANG>E</MASTERLANG>
+    <STEXT>Travel Message</STEXT>
+   </T100A>
+   <T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZCL_MSG_001</ARBGB>
+     <MSGNR>001</MSGNR>
+     <TEXT>&amp;2 ID li Seyahat için Toplam tutar &amp;1 &amp;3</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZCL_MSG_001</ARBGB>
+     <MSGNR>002</MSGNR>
+     <TEXT>&amp;2 ID li Seyahat için Uçuş tutarı &amp;1 &amp;3</TEXT>
+    </T100>
+   </T100>
+  </asx:values>
+ </asx:abap>
+</abapGit>

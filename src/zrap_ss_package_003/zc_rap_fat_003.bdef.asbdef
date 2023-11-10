@@ -1,0 +1,28 @@
+projection;
+strict ( 2 );
+
+define behavior for zc_rap_fat_003 alias Siparis
+{
+  use create;
+  use update;
+  use delete;
+
+  use association _Fatura { create; }
+  use association _Teslimat { create; }
+}
+
+define behavior for zc_rap_fat_004 alias Fatura
+{
+  use update;
+  use delete;
+
+  use association _Siparis;
+}
+
+define behavior for Zc_RAP_FAT_005 alias Teslimat
+{
+  use update;
+  use delete;
+
+  use association _Siparis;
+}

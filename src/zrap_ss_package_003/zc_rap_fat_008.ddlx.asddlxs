@@ -1,0 +1,53 @@
+@Metadata.layer: #CORE
+@UI: {
+       headerInfo: { typeName: 'Teslimat',
+                     typeNamePlural: 'Teslimat',
+                     title: { type:#STANDARD , label: 'Teslimat' } } }
+
+annotate view ZC_RAP_FAT_008 with
+{
+  @UI.facet: [ { id:             'Teslimat',
+                purpose:         #STANDARD,
+                type:            #IDENTIFICATION_REFERENCE,
+                label:           'Teslimat',
+                position:        10 },
+                { id:             'Fatura',
+                purpose:         #STANDARD,
+                type:            #LINEITEM_REFERENCE,
+                label:           'Fatura',
+                position:        20,
+                targetElement: '_Siparis._Fatura' } ]
+
+  @UI:{ lineItem:     [{ position: 10, label: 'Teslimat Belgesi' }],
+      identification: [{ position: 10, label: 'Teslimat Belgesi' }] }
+  Vbeln;
+
+  @UI:{ lineItem:     [{ position: 20, label: 'Kalem' }],
+      identification: [{ position: 20, label: 'Kalem' }] }
+  Posnr;
+
+  @UI:{ lineItem:     [{ position: 30, label: 'Malzeme' }],
+      identification: [{ position: 30, label: 'Malzeme' }] }
+  Matnr;
+
+  @UI:{ lineItem:     [{ position: 40, label: 'Yaratılma Tarihi' }],
+      identification: [{ position: 40, label: 'Yaratılma Tarihi' }] }
+  Erdat;
+
+  @UI:{ lineItem:     [{ position: 50, label: 'Yaratan' }],
+      identification: [{ position: 50, label: 'Yaratan' }] }
+  Ernam;
+
+  @UI:{ lineItem:     [{ position: 60, label: 'Referans belge' }],
+      identification: [{ position: 60, label: 'Referans belge' }] }
+  Vgbel;
+
+  @UI:{ lineItem:     [{ position: 70, label: 'Referans kalem' }],
+      identification: [{ position: 70, label: 'Referans kalem' }] }
+  Vgpos;
+  /* Associations */
+  @UI:{ lineItem:     [{ position: 35, label: 'Malzeme Tanım' }],
+      identification: [{ position: 35, label: 'Malzeme Tanım' }] }
+  Arktx;
+  //   _Siparis;
+}

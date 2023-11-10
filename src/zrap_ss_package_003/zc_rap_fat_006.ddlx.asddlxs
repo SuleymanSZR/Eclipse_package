@@ -1,0 +1,57 @@
+@Metadata.layer: #CORE
+@UI: {
+       headerInfo: { typeName: 'Siparis',
+                     typeNamePlural: 'Siparis',
+                     title: { type:#STANDARD , label: 'Siparis' } } }
+  
+
+annotate view ZC_RAP_FAT_006 with
+{
+  @UI.facet: [{ id:             'Siparis',
+                purpose:         #STANDARD,
+                type:            #IDENTIFICATION_REFERENCE,
+                label:           'Siparis',
+                position:        10 },
+                { id:             'Fatura',
+                purpose:         #STANDARD,
+                type:            #LINEITEM_REFERENCE,
+                label:           'Fatura',
+                position:        20,
+                targetElement: '_Fatura' },
+                { id:             'Teslimat',
+                purpose:         #STANDARD,
+                type:            #LINEITEM_REFERENCE,
+                label:           'Teslimat',
+                position:        30,
+                targetElement: '_Teslimat' } ]
+
+  @UI:{ lineItem:     [{ position: 10, label: 'Satış Belgesi' }],
+      identification: [{ position: 10, label: 'Satış Belgesi' }] }
+  Vbeln;
+
+  @UI:{ lineItem:     [{ position: 20, label: 'Kalem' }],
+      identification: [{ position: 20, label: 'Kalem' }] }
+  Posnr;
+
+  @UI:{ lineItem:     [{ position: 30, label: 'Malzeme' }],
+      identification: [{ position: 30, label: 'Malzeme' }] }
+  Matnr;
+
+  @UI:{ lineItem:     [{ position: 40, label: 'Mal Grubu' }],
+      identification: [{ position: 40, label: 'Mal Grubu' }] }
+  Matkl;
+
+  @UI:{ lineItem:     [{ position: 50, label: 'Tanım' }],
+      identification: [{ position: 50, label: 'Tanım' }] }
+  Arktx;
+
+  @UI:{ lineItem:     [{ position: 60, label: 'Kalem tipi' }],
+      identification: [{ position: 60, label: 'Kalem tipi' }] }
+  Pstyv;
+
+
+  /* Associations */
+  //  _Fatura;
+  //  _Teslimat;
+
+}

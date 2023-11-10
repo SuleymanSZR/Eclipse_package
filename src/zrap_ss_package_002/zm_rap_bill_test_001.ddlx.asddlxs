@@ -1,0 +1,44 @@
+@Metadata.layer: #CORE
+@UI: {
+       headerInfo: { typeName: 'Fatura',
+                     typeNamePlural: 'Fatura',
+                     title: { type:#STANDARD , label: 'Fatura' } } }
+                     
+annotate view zr_rap_bill_test_001
+    with 
+{
+  @UI.facet: [{ id:             'Fatura',
+                purpose:         #STANDARD,
+                type:            #IDENTIFICATION_REFERENCE,
+                label:           'Fatura',
+                position:        10 } ] 
+                 
+  @UI:{ lineItem:       [{ position: 10, label: 'Belge No' }],
+        identification: [{ position: 10, label: 'Belge No' }] }  
+  Belnr;
+  
+  @UI: {  lineItem:       [ { position: 20, label: 'Malzeme' } ],
+          identification: [ { position: 20, label: 'Malzeme' } ] }  
+   Matnr;
+
+  @UI: {  lineItem:       [ { position: 30, label: 'Para Birimi' } ],
+          identification: [ { position: 30, label: 'Para Birimi' } ] }  
+  Parabirimi;
+
+  @UI: {  lineItem:       [ { position: 40, label: 'Toplam Tutar' } ],
+          identification: [ { position: 40, label: 'Toplam Tutar' } ] }  
+  Toplamtutar;
+
+  @UI: {  lineItem:       [ { position: 50, label: 'Oluşturma Tarihi' } ],
+          identification: [ { position: 50, label: 'Oluşturma Tarihi' } ] }   
+   Olusturmatarih;
+
+  @UI: {  lineItem:       [ { position: 60, label:'Şirket Kodu' },
+                            { type: #FOR_ACTION , dataAction: 'sirketDetay', label: 'Şirket Detay' } ],
+          identification: [ { position: 60, label:'Şirket Kodu' } ] }   
+   Sirketkodu;
+
+  @UI: {  lineItem:       [ { position: 70, label:'Şirket Adı' } ],
+          identification: [ { position: 70, label:'Şirket Adı' } ] }   
+   sirketadi;    
+}
